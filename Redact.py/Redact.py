@@ -393,7 +393,7 @@ class Drawing(QFrame):
         else:
             super().keyPressEvent(event)
             return
-
+###
         bounds = self.rect()
         if dx != 0 or dy != 0:
             self.cont.move_stated(dx, dy, bounds)
