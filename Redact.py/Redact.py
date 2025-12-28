@@ -51,11 +51,35 @@ class Geometry:
     def set_color(self, color):
         self.color = color
 
+class Group(Geometry):
+    def __init__(self, x: int, y :int , color = Qt.grey, obj=None):
+        super().__init__(x,y,color)
+        self.obj = obj or []
+        self._center_group()
+    
+    def _center_group(self):
+        if not self.obj: return
+        r = self.get_obvodka()
+        self.center = QPoint(r.center().x(),r.center().y())
+    def get_obvodka(self) -> QRect:
+        if not self.obj:
+            return QRect(self.center,self.center)
+        l = min(c.get_obvodka().left() for c in self.obj)
+        r = max(c.get_obvodka().right() for c in self.obj)
+        b = max(c.get_obvodka().bottom() for c in self.obj)
+        t = min(c.get_obvodka().top() for c in self.obj)
+        return QRect(l,t,r-l,b-t)
+    de
+
+
+a = QRect
+a.
+
 
 class Circle(Geometry):
     def __init__(self, x: int, y: int, color=Qt.blue):
         super().__init__(x, y, color)
-        self.r = 20
+        self.r = 40
         self.min = 5
         self.max = 100
 
@@ -88,8 +112,8 @@ class Circle(Geometry):
 class Rects(Geometry):
     def __init__(self, x: int, y: int, color=Qt.magenta):
         super().__init__(x, y, color)
-        self.width = 40
-        self.height = 40
+        self.width = 100
+        self.height = 80
         self.min = 10
         self.max = 200
 
@@ -135,8 +159,8 @@ class Rects(Geometry):
 class Rectangle(Geometry):
     def __init__(self, x: int, y: int, color=Qt.yellow):
         super().__init__(x, y, color)
-        self.width = 60
-        self.height = 30
+        self.width = 80
+        self.height = 60
         self.min = 10
         self.max = 200
 
@@ -182,8 +206,8 @@ class Rectangle(Geometry):
 class Ellipse(Geometry):
     def __init__(self, x: int, y: int, color=Qt.green):
         super().__init__(x, y, color)
-        self.rx = 30
-        self.ry = 20
+        self.rx = 60
+        self.ry = 30
         self.min = 5
         self.max = 100
 
@@ -222,7 +246,7 @@ class Ellipse(Geometry):
 class Tringl(Geometry):
     def __init__(self, x: int, y: int, color=Qt.cyan):
         super().__init__(x, y, color)
-        self.size = 40
+        self.size = 60
         self.min = 10
         self.max = 150
 
@@ -264,7 +288,7 @@ class Tringl(Geometry):
 class Line(Geometry):
     def __init__(self, x: int, y: int, color=Qt.black):
         super().__init__(x, y, color)
-        self.length = 50
+        self.length = 100
         self.min = 10
         self.max = 300
 
@@ -317,15 +341,26 @@ class Container:
             s.bas_state()
 
     def Popal(self, point: QPoint, ctrl: bool):
+        popal = []
+        i=0
         for geom in reversed(self._cont):
             if geom.Is_in(point):
+                    popal.append(geom)
+        if not popal:
+            if not ctrl:
+                self.base_state()
+            return False
+        else:
+            if not ctrl:
+                self.base_state()
+
+            for geom in popal:
                 if not ctrl:
-                    self.base_state()
+                    geom.Replace_state()
+                    return True
+                geom.bas_state()    
                 geom.Replace_state()
-                return True
-        if not ctrl:
-            self.base_state()
-        return False
+            return True
 
     def move_stated(self, dx: int, dy: int, bounds: QRect):
         for s in self.get_stated():
@@ -393,7 +428,7 @@ class Drawing(QFrame):
         else:
             super().keyPressEvent(event)
             return
-###
+
         bounds = self.rect()
         if dx != 0 or dy != 0:
             self.cont.move_stated(dx, dy, bounds)

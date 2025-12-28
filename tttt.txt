@@ -1,0 +1,3 @@
+2
+{"name": "Circle", "x": 278, "y": 216, "color": 11, "state": false, "r": 40}
+{"name": "Group", "x": 189, "y": 119, "color": 2, "state": true, "objects": [{"name": "Circle", "x": 195, "y": 104, "color": 2, "state": false, "r": 40}, {"name": "Tringl", "x": 253, "y": 67, "color": 2, "state": false, "size": 60}, {"name": "Tringl", "x": 128, "y": 173, "color": 2, "state": false, "size": 60}]}

@@ -1,0 +1,5 @@
+4
+{"type": "Line", "x": 385, "y": 64, "color": 2, "state": false, "len": 100}
+{"type": "Line", "x": 330, "y": 85, "color": 2, "state": false, "len": 100}
+{"type": "Group", "x": 329, "y": 111, "color": 2, "state": false, "objects": [{"type": "Tringl", "x": 291, "y": 93, "color": 2, "state": false, "size": 60}, {"type": "Tringl", "x": 316, "y": 134, "color": 2, "state": false, "size": 60}, {"type": "Tringl", "x": 370, "y": 121, "color": 2, "state": false, "size": 60}, {"type": "Tringl", "x": 359, "y": 90, "color": 2, "state": false, "size": 60}]}
+{"type": "Tringl", "x": 405, "y": 109, "color": 10, "state": false, "size": 60}

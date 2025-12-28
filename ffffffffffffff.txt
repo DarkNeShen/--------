@@ -1,0 +1,4 @@
+3
+{"name": "Tringl", "x": 269, "y": 48, "color": 10, "state": false, "size": 60}
+{"name": "Tringl", "x": 270, "y": 82, "color": 10, "state": false, "size": 60}
+{"name": "Group", "x": 311, "y": 169, "color": 2, "state": true, "objects": [{"name": "Circle", "x": 350, "y": 132, "color": 2, "state": false, "r": 40}, {"name": "Circle", "x": 275, "y": 163, "color": 2, "state": false, "r": 40}, {"name": "Circle", "x": 283, "y": 203, "color": 2, "state": false, "r": 40}, {"name": "Tringl", "x": 336, "y": 219, "color": 2, "state": false, "size": 60}]}

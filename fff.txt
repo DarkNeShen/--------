@@ -1,0 +1,2 @@
+1
+{"type": "Group", "x": 337, "y": 168, "color": 2, "state": true, "objects": [{"type": "Circle", "x": 419, "y": 234, "color": 2, "state": false, "r": 40}, {"type": "Circle", "x": 257, "y": 152, "color": 2, "state": false, "r": 40}, {"type": "Tringl", "x": 392, "y": 94, "color": 2, "state": false, "size": 60}, {"type": "Tringl", "x": 357, "y": 214, "color": 2, "state": false, "size": 60}, {"type": "Tringl", "x": 290, "y": 202, "color": 2, "state": false, "size": 60}]}
